@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign up — ReQuora</title>
+<meta name="description" content="Create a ReQuora account to report and claim lost items.">
+<meta name="theme-color" content="#5e1020">
+<link rel="icon" type="image/png" href="assets/bpsu-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-auth">
+<div id="site-header"></div>
+
+<main class="auth-page">
+  <div class="auth-split">
+    <aside class="auth-brand">
+      <div class="auth-brand-inner">
+        <img src="assets/bpsu-logo.png" alt="Bataan Peninsula State University seal" width="96" height="96">
+        <h2>Join the BPSU community on ReQuora</h2>
+        <p>Report what you lose or find, and help your fellow Bataan Peninsula State University students, faculty and staff.</p>
+        <ul class="auth-points">
+          <li><span data-icon="plus"></span> Report in under two minutes</li>
+          <li><span data-icon="lock"></span> Your contact details stay private</li>
+          <li><span data-icon="checkCircle"></span> Free for every BPSU member</li>
+        </ul>
+      </div>
+    </aside>
+
+    <section class="auth-panel">
+      <div class="auth-card">
+        <h1>Create your account</h1>
+        <p class="subtitle">Use your BPSU email so the office can reach you.</p>
+        <div class="form-msg" id="form-msg"></div>
+        <form id="register-form" novalidate>
+          <div class="form-field">
+            <label for="name">Full name</label>
+            <input type="text" id="name" name="name" required placeholder="Juan Dela Cruz" autocomplete="name" maxlength="80">
+          </div>
+          <div class="form-field">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" required placeholder="you@bpsu.edu.ph" autocomplete="email" maxlength="120">
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="studentId">Student / employee ID <span class="optional">(optional)</span></label>
+              <input type="text" id="studentId" name="studentId" placeholder="e.g. 22-1234" maxlength="30" autocomplete="off">
+            </div>
+            <div class="form-field">
+              <label for="role">I am a</label>
+              <select id="role" name="role">
+                <option value="student">Student</option>
+                <option value="faculty">Faculty</option>
+                <option value="staff">Staff</option>
+              </select>
+            </div>
+          </div>
+          <div id="password-slot"></div>
+          <ul class="pw-rules" id="pw-rules" aria-label="Password requirements">
+            <li data-rule="len">At least 8 characters</li>
+            <li data-rule="letter">One letter</li>
+            <li data-rule="digit">One number</li>
+          </ul>
+          <button type="submit" class="btn btn-primary btn-block btn-lg" id="submit-btn">Create account</button>
+        </form>
+        <p class="form-footnote">Already have an account? <a href="login.html" id="to-login">Log in</a></p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/modals.js"></script>
+<script src="js/components.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+[build]
+  publish = "."
+  command = ""
+
+# Cache static assets, never cache the HTML pages themselves so updates show up immediately
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

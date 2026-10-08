@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Report an item — ReQuora</title>
+<meta name="description" content="Report a lost or found item to the BPSU Lost and Found.">
+<meta name="theme-color" content="#5e1020">
+<link rel="icon" type="image/png" href="assets/bpsu-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-report">
+<div id="site-header"></div>
+
+<main>
+  <section class="page-hero compact">
+    <div class="container">
+      <p class="eyebrow">New report</p>
+      <h1 id="form-title">Report an item</h1>
+      <p>The more detail you give, the faster the office can match lost items with found ones.</p>
+    </div>
+  </section>
+
+  <div class="container section tight report-layout">
+    <form id="report-form" class="report-form" novalidate>
+      <div class="form-msg" id="form-msg" role="alert"></div>
+
+      <section class="form-card" aria-labelledby="sec-type">
+        <h2 id="sec-type"><span class="sec-num">1</span> What happened?</h2>
+        <fieldset class="type-cards">
+          <legend class="sr-only">Report type</legend>
+          <label class="type-card type-lost" id="label-lost">
+            <input type="radio" name="type" value="lost" checked>
+            <span class="type-card-icon" data-icon="search"></span>
+            <span><strong>I lost something</strong><small>Tell us what it looks like and where you last saw it.</small></span>
+          </label>
+          <label class="type-card type-found" id="label-found">
+            <input type="radio" name="type" value="found">
+            <span class="type-card-icon" data-icon="check"></span>
+            <span><strong>I found something</strong><small>Help the owner find it. Hand it in to the office.</small></span>
+          </label>
+        </fieldset>
+      </section>
+
+      <section class="form-card" aria-labelledby="sec-item">
+        <h2 id="sec-item"><span class="sec-num">2</span> About the item</h2>
+        <div class="form-field">
+          <label for="title">Item name</label>
+          <input type="text" id="title" name="title" required maxlength="100" placeholder="e.g. Black North Face backpack" autocomplete="off">
+        </div>
+        <div class="form-field">
+          <label for="category">Category</label>
+          <select id="category" name="category" required><option value="">Select a category</option></select>
+        </div>
+        <div class="form-field">
+          <label for="description">Description</label>
+          <textarea id="description" name="description" required rows="4" maxlength="1000" placeholder="Color, brand, size, distinguishing marks, what was inside…"></textarea>
+          <small class="field-hint"><span id="description-count">0</span> / 1000 characters · at least 10</small>
+        </div>
+      </section>
+
+      <section class="form-card" aria-labelledby="sec-when">
+        <h2 id="sec-when"><span class="sec-num">3</span> When &amp; where</h2>
+        <div class="form-field">
+          <label for="location" id="location-label">Location last seen</label>
+          <input type="text" id="location" name="location" required maxlength="150" placeholder="e.g. Main Library, 2nd floor reading area" autocomplete="off">
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="date" id="date-label">Date lost</label>
+            <input type="date" id="date" name="date" required>
+          </div>
+          <div class="form-field">
+            <label for="time">Time <span class="optional">(optional)</span></label>
+            <input type="time" id="time" name="time">
+          </div>
+        </div>
+      </section>
+
+      <section class="form-card" aria-labelledby="sec-photo">
+        <h2 id="sec-photo"><span class="sec-num">4</span> Photo <span class="optional">(optional)</span></h2>
+        <div class="dropzone" id="dropzone">
+          <input type="file" id="image" name="image" accept="image/jpeg,image/png,image/webp,image/gif" class="dropzone-input">
+          <div class="dropzone-empty" id="dropzone-empty">
+            <span class="dropzone-icon" data-icon="upload"></span>
+            <strong>Drag a photo here or <span class="link-like">browse</span></strong>
+            <small>JPG, PNG, WEBP or GIF · up to 5 MB</small>
+          </div>
+          <div class="dropzone-preview" id="dropzone-preview" hidden>
+            <img id="preview-img" alt="Preview of the photo you selected">
+            <div class="dropzone-meta"><strong id="preview-name"></strong><small id="preview-size"></small></div>
+            <button type="button" class="btn btn-ghost btn-sm" id="remove-photo"><span data-icon="trash"></span> Remove</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-card" aria-labelledby="sec-more">
+        <h2 id="sec-more"><span class="sec-num">5</span> More details</h2>
+        <div class="form-field">
+          <label for="additionalDetails">Additional details <span class="optional">(optional)</span></label>
+          <textarea id="additionalDetails" name="additionalDetails" rows="3" maxlength="500" placeholder="Anything else that could help identify the item or match it with a report"></textarea>
+        </div>
+        <div class="form-field">
+          <label for="contactInfo">Contact info <span class="optional">(optional)</span></label>
+          <input type="text" id="contactInfo" name="contactInfo" maxlength="120" placeholder="Phone number or alternate email" autocomplete="off">
+          <small class="field-hint">Private: only the office and people with an approved claim can see this.</small>
+        </div>
+      </section>
+
+      <div class="form-submit">
+        <a href="browse.html" class="btn btn-ghost">Cancel</a>
+        <button type="submit" class="btn btn-primary btn-lg" id="submit-btn">Submit report</button>
+      </div>
+    </form>
+
+    <aside class="report-aside" aria-label="Tips">
+      <div class="card tip-card">
+        <h3><span data-icon="info"></span> Tips for a great report</h3>
+        <ul>
+          <li>Name the brand, colour and size.</li>
+          <li>Mention marks only the owner would know, such as stickers, scratches or initials.</li>
+          <li>Add a clear photo if you have one.</li>
+          <li>For found items, say where you left it (for example, handed to the main gate guard).</li>
+        </ul>
+      </div>
+      <div class="card tip-card">
+        <h3><span data-icon="shield"></span> Your privacy</h3>
+        <p>Your full name and contact details are never shown to the public. The Lost &amp; Found Office verifies every claim in person.</p>
+      </div>
+    </aside>
+
+    <div class="report-success" id="report-success" hidden></div>
+  </div>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/modals.js"></script>
+<script src="js/components.js"></script>
+<script src="js/report.js"></script>
+</body>
+</html>

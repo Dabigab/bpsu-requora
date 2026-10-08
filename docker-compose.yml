@@ -1,0 +1,30 @@
+services:
+  backend:
+    build: ./backend
+    container_name: requora-backend
+    ports:
+      - "5000:5000"
+    environment:
+      PORT: 5000
+      JWT_SECRET: change_this_to_a_long_random_secret_32_chars_min
+      JWT_EXPIRES_IN: 7d
+      ADMIN_NAME: BPSU Lost and Found Admin
+      ADMIN_EMAIL: admin@bpsu.edu.ph
+      ADMIN_PASSWORD: Admin@123
+    volumes:
+      - backend_data:/app/data
+      - backend_uploads:/app/uploads
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: requora-frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  backend_data:
+  backend_uploads:
