@@ -1,16 +1,16 @@
-# ReQuora backend — Node/Express API
 FROM node:20-alpine
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY backend/package*.json ./
+
 RUN npm install --omit=dev
 
-COPY . .
+COPY backend/ ./backend/
+COPY frontend/ ./frontend/
 
-# Data and uploaded photos should live on a mounted volume in production
-# (see docker-compose.yml) so they survive container rebuilds.
 RUN mkdir -p /app/data /app/uploads
 
 EXPOSE 5000
-CMD ["node", "server.js"]
+
+CMD ["node", "backend/server.js"]
