@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 2,
+  "users": [
+    {
+      "id": "76128bca-f3dc-47b7-882a-5f32b23e6148",
+      "createdAt": "2026-10-08T07:03:22.595Z",
+      "name": "BPSU Lost and Found Admin",
+      "email": "admin@bpsu.edu.ph",
+      "studentId": null,
+      "passwordHash": "$2a$10$p1PIvmCp.aUkNhARbIAT1uv/cCpXX.SqSx20WGH/ml/pC3UYIhczu",
+      "role": "admin"
+    },
+    {
+      "id": "a959efa8-d528-4a97-9295-409d437d3bcd",
+      "createdAt": "2026-10-08T07:05:20.944Z",
+      "name": "joshua",
+      "email": "joshuarobles0613@gmail.com",
+      "studentId": "24-09692",
+      "passwordHash": "$2a$10$xexnEd1qo9EGUi1v.aYBWeaiyJwl19.Pi7L/ICRy3O50s7vq8fQ9S",
+      "role": "student"
+    }
+  ],
+  "items": [
+    {
+      "id": "09f5a05c-fb2f-4240-a4d4-a19069a28f53",
+      "status": "pending_verification",
+      "createdAt": "2026-10-08T07:08:11.598Z",
+      "updatedAt": "2026-10-08T07:08:11.598Z",
+      "type": "lost",
+      "title": "Backpack Black with keychain superman",
+      "description": "Small bag with superman keychain",
+      "location": "Main library",
+      "category": "Bags",
+      "date": "2026-10-08",
+      "time": "20:00",
+      "additionalDetails": "Near C.R",
+      "contactInfo": "0915887457",
+      "imageUrl": "/uploads/1791443291589-59c392f0-121e-4a3b-bf12-68f3abfc86f8.jpg",
+      "reportedBy": "a959efa8-d528-4a97-9295-409d437d3bcd",
+      "reportedByName": "joshua"
+    }
+  ],
+  "claims": []
+}

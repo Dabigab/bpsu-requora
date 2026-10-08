@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\backend",
+    "\\backend\\data",
+    "\\backend\\routes",
+    "\\backend\\scripts",
+    "\\backend\\services",
+    "\\backend\\tests",
+    "\\backend\\uploads",
+    "\\backend\\utils",
+    "\\frontend\\assets"
+  ],
+  "SelectedNode": "\\backend\\.env2",
+  "PreviewInSolutionExplorer": false
+}

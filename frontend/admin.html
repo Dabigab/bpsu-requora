@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin dashboard — ReQuora</title>
+<meta name="description" content="Manage reports, claims and users for the BPSU Lost and Found Office.">
+<meta name="theme-color" content="#5e1020">
+<link rel="icon" type="image/png" href="assets/bpsu-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-admin">
+<div id="site-header"></div>
+
+<main id="admin-main">
+  <section class="page-hero compact admin-hero">
+    <div class="container dash-hero">
+      <div>
+        <p class="eyebrow">Lost &amp; Found Office</p>
+        <h1>Admin dashboard</h1>
+        <p>Verify reports, review claims and keep the system tidy.</p>
+      </div>
+      <button type="button" class="btn btn-light" id="admin-refresh"><span data-icon="refresh"></span> Refresh</button>
+    </div>
+  </section>
+
+  <div class="container section tight" id="admin-body">
+    <div class="tabs" role="tablist" aria-label="Admin sections">
+      <button role="tab" id="atab-overview" aria-controls="apanel-overview" aria-selected="true" data-tab="overview">Overview</button>
+      <button role="tab" id="atab-reports" aria-controls="apanel-reports" aria-selected="false" data-tab="reports" tabindex="-1">Reports</button>
+      <button role="tab" id="atab-claims" aria-controls="apanel-claims" aria-selected="false" data-tab="claims" tabindex="-1">Claims <span class="count-pill" id="claims-pill" hidden>0</span></button>
+      <button role="tab" id="atab-users" aria-controls="apanel-users" aria-selected="false" data-tab="users" tabindex="-1">Users</button>
+    </div>
+
+    <section id="apanel-overview" role="tabpanel" aria-labelledby="atab-overview"></section>
+    <section id="apanel-reports" role="tabpanel" aria-labelledby="atab-reports" hidden></section>
+    <section id="apanel-claims" role="tabpanel" aria-labelledby="atab-claims" hidden></section>
+    <section id="apanel-users" role="tabpanel" aria-labelledby="atab-users" hidden></section>
+  </div>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/modals.js"></script>
+<script src="js/components.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

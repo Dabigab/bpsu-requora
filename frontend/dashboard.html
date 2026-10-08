@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My dashboard — ReQuora</title>
+<meta name="description" content="Your reports, claims and profile on ReQuora.">
+<meta name="theme-color" content="#5e1020">
+<link rel="icon" type="image/png" href="assets/bpsu-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-dashboard">
+<div id="site-header"></div>
+
+<main>
+  <section class="page-hero compact">
+    <div class="container dash-hero">
+      <div>
+        <p class="eyebrow">My dashboard</p>
+        <h1 id="welcome">Welcome</h1>
+        <p id="welcome-sub">Here is what is happening with your reports and claims.</p>
+      </div>
+      <div class="dash-actions">
+        <a href="report.html?type=lost" class="btn btn-gold"><span data-icon="plus"></span> Report lost</a>
+        <a href="report.html?type=found" class="btn btn-light"><span data-icon="plus"></span> Report found</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container section tight">
+    <div class="stat-cards" id="dash-stats" aria-live="polite"></div>
+
+    <div class="tabs" role="tablist" aria-label="Dashboard sections">
+      <button role="tab" id="tab-reports" aria-controls="panel-reports" aria-selected="true" data-tab="reports">My reports</button>
+      <button role="tab" id="tab-claims" aria-controls="panel-claims" aria-selected="false" data-tab="claims" tabindex="-1">My claims</button>
+      <button role="tab" id="tab-activity" aria-controls="panel-activity" aria-selected="false" data-tab="activity" tabindex="-1">Recent activity</button>
+      <button role="tab" id="tab-profile" aria-controls="panel-profile" aria-selected="false" data-tab="profile" tabindex="-1">Profile</button>
+    </div>
+
+    <section id="panel-reports" role="tabpanel" aria-labelledby="tab-reports"></section>
+    <section id="panel-claims" role="tabpanel" aria-labelledby="tab-claims" hidden></section>
+    <section id="panel-activity" role="tabpanel" aria-labelledby="tab-activity" hidden></section>
+    <section id="panel-profile" role="tabpanel" aria-labelledby="tab-profile" hidden></section>
+  </div>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/modals.js"></script>
+<script src="js/components.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+node_modules
+npm-debug.log
+.env
+data/db.json
+uploads/*
+!uploads/.gitkeep
+tests

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Browse Lost & Found — ReQuora</title>
+<meta name="description" content="Search and filter every lost and found report across BPSU.">
+<meta name="theme-color" content="#5e1020">
+<link rel="icon" type="image/png" href="assets/bpsu-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-browse">
+<div id="site-header"></div>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Lost &amp; Found feed</p>
+      <h1>Browse lost &amp; found items</h1>
+      <p>Search the reports filed by the BPSU community. Found something that looks like yours? Open it and file a claim.</p>
+    </div>
+  </section>
+
+  <div class="container section tight">
+    <form class="filters card" id="filters" role="search" aria-label="Filter reports">
+      <div class="filters-top">
+        <div class="form-field grow">
+          <label for="f-q">Search</label>
+          <div class="input-wrap">
+            <span class="input-icon" data-icon="search"></span>
+            <input type="search" id="f-q" name="q" placeholder="Search for an item..." autocomplete="off" maxlength="100">
+          </div>
+        </div>
+        <fieldset class="segmented" id="f-type" aria-label="Report type">
+          <legend class="sr-only">Report type</legend>
+          <label><input type="radio" name="type" value="" checked><span>All</span></label>
+          <label><input type="radio" name="type" value="lost"><span>Lost</span></label>
+          <label><input type="radio" name="type" value="found"><span>Found</span></label>
+        </fieldset>
+        <button type="button" class="btn btn-outline filters-toggle" id="filters-toggle" aria-expanded="false" aria-controls="filters-more"><span data-icon="filter"></span> Filters <span class="count-pill" id="filters-count" hidden>0</span></button>
+      </div>
+
+      <div class="filters-more" id="filters-more">
+        <div class="form-field">
+          <label for="f-category">Category</label>
+          <select id="f-category" name="category"><option value="">All categories</option></select>
+        </div>
+        <div class="form-field">
+          <label for="f-status">Status</label>
+          <select id="f-status" name="status">
+            <option value="">Active reports</option>
+            <option value="all">All statuses</option>
+            <option value="pending_verification">Pending Verification</option>
+            <option value="lost">Lost</option>
+            <option value="found">Found</option>
+            <option value="claimed">Claimed</option>
+            <option value="returned">Returned</option>
+            <option value="closed">Closed</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="f-location">Location</label>
+          <input type="text" id="f-location" name="location" placeholder="e.g. Library" maxlength="100">
+        </div>
+        <div class="form-field">
+          <label for="f-from">Date from</label>
+          <input type="date" id="f-from" name="dateFrom">
+        </div>
+        <div class="form-field">
+          <label for="f-to">Date to</label>
+          <input type="date" id="f-to" name="dateTo">
+        </div>
+        <div class="form-field">
+          <label for="f-sort">Sort by</label>
+          <select id="f-sort" name="sort">
+            <option value="">Newest first</option>
+            <option value="oldest">Oldest first</option>
+          </select>
+        </div>
+      </div>
+      <div class="filters-foot">
+        <p class="results-count" id="results-count" aria-live="polite">&nbsp;</p>
+        <button type="button" class="btn btn-ghost btn-sm" id="clear-filters"><span data-icon="x"></span> Clear filters</button>
+      </div>
+    </form>
+
+    <div class="card-grid" id="results" aria-live="polite" aria-busy="true"></div>
+    <div id="pagination"></div>
+  </div>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/modals.js"></script>
+<script src="js/components.js"></script>
+<script src="js/browse.js"></script>
+</body>
+</html>

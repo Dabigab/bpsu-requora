@@ -1,0 +1,28 @@
+{
+  "name": "requora-backend",
+  "version": "1.0.0",
+  "description": "Backend API for ReQuora - Digital Lost and Found for Bataan Peninsula State University",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "seed": "node seed.js",
+    "test": "node --test",
+    "doctor": "node scripts/doctor.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.117.3",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.2"
+  },
+  "devDependencies": {
+    "supertest": "^7.0.0"
+  }
+}

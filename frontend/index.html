@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ReQuora — BPSU Digital Lost & Found</title>
+<meta name="description" content="Report, search and recover lost belongings across Bataan Peninsula State University.">
+<meta name="theme-color" content="#5e1020">
+<link rel="icon" type="image/png" href="assets/bpsu-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-home">
+<div id="site-header"></div>
+
+<main>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Bataan Peninsula State University</p>
+        <h1 id="hero-title">Lost something on campus?<span>Let&rsquo;s help you find it.</span></h1>
+        <p class="lead">ReQuora makes it easier for BPSU students, faculty, and staff to report, search, and recover lost belongings.</p>
+
+        <form class="hero-search" action="browse.html" method="get" role="search">
+          <label class="sr-only" for="hero-q">Search for an item</label>
+          <span class="hero-search-icon" data-icon="search"></span>
+          <input id="hero-q" name="q" type="search" placeholder="Search for an item..." autocomplete="off" maxlength="100">
+          <button class="btn btn-gold" type="submit">Search</button>
+        </form>
+
+        <div class="hero-ctas">
+          <a class="btn btn-gold btn-lg" href="report.html?type=lost" id="cta-lost">Report Lost Item</a>
+          <a class="btn btn-light btn-lg" href="report.html?type=found" id="cta-found">Report Found Item</a>
+          <a class="btn btn-ghost-light btn-lg" href="browse.html" id="cta-browse">Browse Lost &amp; Found</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-orb"></div>
+        <div class="hero-card hero-card-a"><span class="hc-dot lost"></span><div><strong>Reported</strong><small>Lost: Black backpack</small></div></div>
+        <div class="hero-card hero-card-b"><span class="hc-dot pending"></span><div><strong>Verified</strong><small>Checked by the office</small></div></div>
+        <div class="hero-card hero-card-c"><span class="hc-dot found"></span><div><strong>Recovered</strong><small>Back with its owner</small></div></div>
+        <div class="hero-seal"><img src="assets/bpsu-logo.png" alt="" width="150" height="150"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container stats-wrap" aria-label="ReQuora statistics">
+    <div class="stats-strip" id="home-stats">
+      <div class="stat"><span class="stat-icon" data-icon="search"></span><div><strong id="stat-lost">—</strong><span>Lost Items</span></div></div>
+      <div class="stat"><span class="stat-icon found" data-icon="check"></span><div><strong id="stat-found">—</strong><span>Found Items</span></div></div>
+      <div class="stat"><span class="stat-icon returned" data-icon="checkCircle"></span><div><strong id="stat-returned">—</strong><span>Items Returned</span></div></div>
+      <div class="stat"><span class="stat-icon active" data-icon="list"></span><div><strong id="stat-active">—</strong><span>Active Reports</span></div></div>
+    </div>
+  </section>
+
+  <section class="container section" aria-labelledby="recent-title">
+    <div class="section-head">
+      <div>
+        <h2 id="recent-title">Recently reported</h2>
+        <p>The latest items reported lost or found around campus.</p>
+      </div>
+      <a href="browse.html" class="btn btn-outline btn-sm">View all reports <span data-icon="arrowRight"></span></a>
+    </div>
+    <div class="card-grid" id="recent-grid" aria-live="polite"></div>
+  </section>
+
+  <section class="how" aria-labelledby="how-title">
+    <div class="container">
+      <div class="section-head center">
+        <div>
+          <h2 id="how-title">How ReQuora works</h2>
+          <p>From the moment it is lost to the moment it is back in your hands.</p>
+        </div>
+      </div>
+      <ol class="steps">
+        <li><span class="step-icon" data-icon="plus"></span><h3>1. Report</h3><p>Describe what you lost or found, add a photo, and tell us where and when.</p></li>
+        <li><span class="step-icon" data-icon="search"></span><h3>2. Search</h3><p>Browse the live feed and filter by category, location, and date to spot a match.</p></li>
+        <li><span class="step-icon" data-icon="shield"></span><h3>3. Verify</h3><p>Claim an item and book a visit. The office checks your proof of ownership.</p></li>
+        <li><span class="step-icon" data-icon="award"></span><h3>4. Recover</h3><p>Collect your belonging from the BPSU Lost &amp; Found Office and sign the logbook.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="container section">
+    <div class="cta-band">
+      <div>
+        <h2>Found something? Help it find its owner.</h2>
+        <p>Turn it in to the Security Services Office and file a quick report so the owner can find it.</p>
+      </div>
+      <a class="btn btn-gold btn-lg" href="report.html?type=found">Report a found item</a>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/modals.js"></script>
+<script src="js/components.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

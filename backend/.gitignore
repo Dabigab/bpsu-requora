@@ -1,0 +1,8 @@
+node_modules/
+.env
+uploads/*
+!uploads/.gitkeep
+tests/tmp-*.json
+.vs/
+node_modules/
+*.log
